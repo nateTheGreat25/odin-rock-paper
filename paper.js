@@ -33,6 +33,8 @@ function playRound (humanChoice, computerChoice) {
         }else if (computerChoice === "paper") {
             console.log("You lose! rock loses to paper.");
             computerScore++;
+        }else if ( computerChoice === "rock"){
+            console.log("You have Tied, No one gets a piont");
         }       
     }else if (humanChoice === "paper") {
         if(computerChoice === "rock"){
@@ -41,7 +43,9 @@ function playRound (humanChoice, computerChoice) {
         }else if(computerChoice === "scissors") {
             console.log("You lose! paper loses to scissors");
             computerScore++;
-        }
+        }else if ( computerChoice === "paper"){
+            console.log("You have Tied, No one gets a piont");
+        }     
     } else if(humanChoice === "scissors"){
         if(computerChoice === "paper"){
             console.log("You win! scissors beats paper.");
@@ -50,8 +54,9 @@ function playRound (humanChoice, computerChoice) {
             console.log("You lose scissorsloses to rock!");
             computerScore++;
         }
-    }else{
-        console.log("You have Tied, No one gets a piont");         
+        else if ( computerChoice === "scissors"){
+            console.log("You have Tied, No one gets a piont");
+        }     
     }
 }
 
@@ -63,4 +68,14 @@ function playGame(){
 
         playRound(humanSelection, computerSelection);
     }
+
+    if (humanScore > computerScore){
+        console.log("The human has won!");
+    }else if (humanScore < computerScore){
+        console.log("The computer has won!");
+    }else {
+        console.log("The human and computer have tied");
+    }
 }
+
+playGame();
