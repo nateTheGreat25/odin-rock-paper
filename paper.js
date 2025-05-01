@@ -62,20 +62,7 @@ function playRound (humanChoice, computerChoice) {
 
 
 function playGame(){
-    for (let i = 0; i < 5; i++){
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();    
-
-        playRound(humanSelection, computerSelection);
-    }
-
-    if (humanScore > computerScore){
-        console.log("The human has won!");
-    }else if (humanScore < computerScore){
-        console.log("The computer has won!");
-    }else {
-        console.log("The human and computer have tied");
-    }
+   
 }
 
 playGame();
