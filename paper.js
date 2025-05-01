@@ -1,3 +1,7 @@
+let humanChoice = "";
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice (){
     let compInt = Math.round(Math.floor(Math.random() * 3));
     let compChoice;
@@ -17,12 +21,17 @@ function getComputerChoice (){
 };
 
 function getHumanChoice () {
-    let humanChoice = prompt("rock,paper or scissors");
-    return humanChoice;
-};
+    const buttons = document.querySelectorAll("button");
+    
 
-let humanScore = 0;
-let computerScore = 0;
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            humanChoice = button.id;
+        });
+    });
+};
+console.log(humanChoice);
+
 
 function playRound (humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
