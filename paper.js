@@ -1,6 +1,15 @@
-let humanChoice = "";
+//let humanChoice = "";
 let humanScore = 0;
 let computerScore = 0;
+
+function getHumanChoice (buttons){
+    
+    
+
+
+    
+return humanChoice;
+};
 
 function getComputerChoice (){
     let compInt = Math.round(Math.floor(Math.random() * 3));
@@ -20,17 +29,8 @@ function getComputerChoice (){
     return compChoice;
 };
 
-function getHumanChoice () {
-    const buttons = document.querySelectorAll("button");
-    
 
-    buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-            humanChoice = button.id;
-        });
-    });
-};
-console.log(humanChoice);
+
 
 
 function playRound (humanChoice, computerChoice) {
@@ -69,9 +69,20 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
+const buttons = document.querySelectorAll("button");
+
+let humanChoice = "";
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        humanChoice = button.id; 
+        playRound(humanChoice,getComputerChoice());      
+   });
+});
+
+
 
 function playGame(){
    
 }
 
-playGame();
+//playGame();
