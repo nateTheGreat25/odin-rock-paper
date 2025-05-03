@@ -57,6 +57,9 @@ let i = 0; //counter for eactime function runs
 
 
 function playRound (humanChoice, computerChoice) {
+    if (humanChoice >= 5 || computerChoice >= 6){
+        return;
+    }
    
     humanChoice = humanChoice.toLowerCase();
     if( humanChoice === "rock") {
@@ -116,6 +119,20 @@ function playRound (humanChoice, computerChoice) {
         
 
     });
+
+    removeTheElement("#runScore")
+    const scoreDiv = document.createElement("div");
+    scoreDiv.setAttribute("id", "runScore");
+    let scoreString = "";
+    if (humanScore >= 5 ){
+        scoreString = `The Human has won with a score of ${humanScore} the computer overlords will not take over any time soon.`;      
+    } else if (computerScore >= 5) {
+        scoreString = `The Computer has won with a score of ${computerScore} the computer overlords will take over shortly.`;
+    }else {
+        scoreString = `The current score is Human: ${humanScore} Computer: ${computerScore}.`;
+    }
+    scoreDiv.textContent = scoreString;
+    parentDiv.appendChild(scoreDiv);
 }
 
 const buttons = document.querySelectorAll("button");
