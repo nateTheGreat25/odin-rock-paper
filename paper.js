@@ -57,7 +57,7 @@ let i = 0; //counter for eactime function runs
 
 
 function playRound (humanChoice, computerChoice) {
-    if (humanChoice >= 5 || computerChoice >= 6){
+    if (humanScore  >= 5 || computerScore >= 5){
         return;
     }
    
