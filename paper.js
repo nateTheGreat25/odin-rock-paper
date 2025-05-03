@@ -4,9 +4,6 @@ let computerScore = 0;
 
 const parentDiv = document.querySelector("#container");
 
-
-//const para = document.createElement("p")
-
 function removeTheElement (selector) {
     const elementsToRemove = document.querySelectorAll(selector)
     
@@ -22,15 +19,6 @@ function removeTheElement (selector) {
         console.log(selector);
     }
   }
-
-function getHumanChoice (buttons){
-    
-    
-
-
-    
-return humanChoice;
-};
 
 function getComputerChoice (){
     let compInt = Math.round(Math.floor(Math.random() * 3));
@@ -50,11 +38,8 @@ function getComputerChoice (){
     return compChoice;
 };
 
-
-
 let rounds = []; // keeps the text fro each round in one element
 let i = 0; //counter for eactime function runs
-
 
 function playRound (humanChoice, computerChoice) {
     if (humanScore  >= 5 || computerScore >= 5){
@@ -103,8 +88,7 @@ function playRound (humanChoice, computerChoice) {
            // console.log("You have Tied, No one gets a piont");
         }     
     }
-    i++;
-    
+    i++;    
     
     removeTheElement("#roundScore");
    
@@ -145,11 +129,3 @@ buttons.forEach((button) => {
             
    });
 });
-
-
-
-function playGame(){
-   
-}
-
-//playGame();
